@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; padding: 2em; }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    img { width: 100%; border-radius: 10px; }
+    h1 { color: #2e8b57; }
+    .back {
+      display: inline-block;
+      margin-top: 1em;
+      color: #2e8b57;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img id="productImg" src="" alt="">
+    <h1 id="productName"></h1>
+    <p id="productDesc"></p>
+    <p><strong id="productPrice"></strong></p>
+    <a href="contohtoko.html" class="back">← Kembali ke Toko</a>
+  </div>
+
+  <script>
+    const produkData = {
+      angst: {
+        name: "ANGST",
+        img: "images/angst.jpg",
+        desc: "Tanaman ini tumbuh di bawah bayangan bulan merah. Cocok untuk perenung senyap.",
+        price: "Rp 40.000"
+      },
+      behelit: {
+        name: "Behelit",
+        img: "images/behelit.jpg",
+        desc: "Berbentuk bulat gelap dengan aura yang memikat. Katanya bisa membuka dimensi lain.",
+        price: "Rp 75.000"
+      },
+      torment: {
+        name: "Torment",
+        img: "images/torment.jpg",
+        desc: "Tumbuh di tanah pahit, daun berduri yang indah. Untuk pecinta luka yang estetis.",
+        price: "Rp 55.000"
+      }
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const produkKey = urlParams.get('produk');
+    const produk = produkData[produkKey];
+
+    if (produk) {
+      document.getElementById('productImg').src = produk.img;
+      document.getElementById('productName').textContent = produk.name;
+      document.getElementById('productDesc').textContent = produk.desc;
+      document.getElementById('productPrice').textContent = produk.price;
+    } else {
+      document.querySelector('.container').innerHTML = '<p>Produk tidak ditemukan.</p><a href="index.html" class="back">← Kembali</a>';
+    }
+  </script>
+</body>
+</html>

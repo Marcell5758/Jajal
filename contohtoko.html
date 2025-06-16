@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Plant Shop</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        .product-grid {
+            display: flex;
+            gap: 1em;
+            padding: 2em;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: white;
+            border-radius: 8px;
+            padding: 1em;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+            .product img {
+                width: 100%;
+                height: auto;
+                border-radius: 6px;
+            }
+
+            .product h3 {
+                margin: 0.5em 0;
+                color: #2e8b57;
+            }
+
+            .product a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+            }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center; padding:1em;">Dark Plant Shop</h1>
+    <div class="product-grid">
+        <div class="product">
+            <img src="images/angst.jpg" alt="ANGST">
+            <h3>ANGST</h3>
+            <a href="detail.html?produk=angst">Lihat Detail</a>
+        </div>
+        <div class="product">
+            <img src="images/behelit.jpg" alt="Behelit">
+            <h3>Behelit</h3>
+            <a href="detail.html?produk=behelit">Lihat Detail</a>
+        </div>
+        <div class="product">
+            <img src="images/torment.jpg" alt="Torment">
+            <h3>Torment</h3>
+            <a href="detail.html?produk=torment">Lihat Detail</a>
+        </div>
+    </div>
+</body>
+</html>
